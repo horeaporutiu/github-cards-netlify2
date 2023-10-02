@@ -32,9 +32,7 @@ exports.handler = async function (event) {
   //   Get card mappings from database
   const { data, error } = await supabase
     .from("card-mapping")
-    .select(
-      "id, miroAppCardId, gitHubIssueId, miroUserId, gitHubUsername, created_at, miroBoardId, gitHubIssueNumber, auth ( access_token )",
-    )
+    .select()
     .eq("gitHubIssueId", gitHubIssueId);
 
   //   No Miro App Card Found
