@@ -2,8 +2,3 @@
   node_bundler = "esbuild"
   
   included_files = ["src/utils/*.ts"]
-
-[build]
-command = 'npm run build'
-functions = 'netlify/functions'
-publish = 'build'
