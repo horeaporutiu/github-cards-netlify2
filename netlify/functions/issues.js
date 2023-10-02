@@ -81,6 +81,9 @@ exports.handler = async function (event) {
               options,
             );
 
+            console.log('miroAppCardResponse: ')
+            console.log(miroAppCardResponse)
+
             if (miroAppCardResponse.ok) {
               const data = miroAppCardResponse.json();
               const response = {
