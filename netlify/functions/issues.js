@@ -11,13 +11,18 @@ const supabase = createClient(
   process.env.VITE_DATABASE_PUBLIC_KEY,
 );
 
+console.log('we are in issues functions')
+
 exports.handler = async function (event) {
   if (!event.body) {
+    console.log('no event body')
     return {
       statusCode: 200,
       body: JSON.stringify({ message: "No Body Found" }),
     };
   }
+  console.log('event.body')
+  console.log(event.body)
 
   // Get Issue
   const body = JSON.parse(event.body);
