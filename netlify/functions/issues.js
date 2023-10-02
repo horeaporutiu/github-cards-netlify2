@@ -37,6 +37,10 @@ exports.handler = async function (event) {
     )
     .eq("gitHubIssueId", gitHubIssueId);
 
+    console.log('data')
+    console.log(data)
+
+
   //   No Miro App Card Found
   if (error) {
     console.log('this github issue IS NOT FOUND')
