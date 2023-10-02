@@ -1,0 +1,8 @@
+# See https://developers.miro.com/docs/app-manifest on how to use this
+appName: GitHub App Cards
+sdkUri: "http://localhost:3000"
+redirectUris:
+  - http://localhost:3000/authorize
+scopes:
+  - boards:read
+  - boards:write
