@@ -35,9 +35,8 @@ exports.handler = async function (event) {
     const miro_user_id = result.user_id;
     const modifiedAtTime = new Date();
 
-    console.log('auth response')
+    console.log('result: ')
     console.log(result)
-    return JSON.stringify({ message: result });
 
     const { data, error } = await supabase.from("auth").upsert([
       {
