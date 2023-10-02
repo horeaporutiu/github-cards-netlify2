@@ -5,7 +5,6 @@
 **/
 import { createClient } from "@supabase/supabase-js";
 import fetch from "node-fetch";
-import username from "../../src/constants.ts";
 
 const supabase = createClient(
   process.env.VITE_DATABASE_URL,
@@ -26,7 +25,7 @@ exports.handler = async function (event) {
   const gitHubProjectColumnId = gitHubProjectCard.column_id;
   const gitHubIssueNumer = gitHubProjectCard.content_url
     .split(
-      "https:// api.github.com/repos/" + username + "/github-cards/issues/",
+      "https:// api.github.com/repos/bishopwm/github-cards/issues/",
     )
     .pop();
 
