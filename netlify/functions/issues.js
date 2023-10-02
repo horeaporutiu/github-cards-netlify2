@@ -33,7 +33,7 @@ exports.handler = async function (event) {
   const { data, error } = await supabase
     .from("card-mapping")
     .select(
-      "id, miroAppCardId::text, gitHubIssueId, miroUserId::text, gitHubUsername, created_at, miroBoardId, gitHubIssueNumber, auth ( access_token )",
+      "id, miroAppCardId::numeric, gitHubIssueId, miroUserId::text, gitHubUsername, created_at, miroBoardId, gitHubIssueNumber, auth ( access_token )",
     )
     .eq("gitHubIssueId", gitHubIssueId);
 
