@@ -54,6 +54,9 @@ exports.handler = async function (event) {
           Authorization: `Bearer ${item.auth.access_token}`,
         };
 
+        console.log('before the path request, console body')
+        console.log(body)
+
         //   Request options & body
         const options = {
           method: "PATCH",
