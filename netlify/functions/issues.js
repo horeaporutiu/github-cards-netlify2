@@ -33,7 +33,7 @@ exports.handler = async function (event) {
   const { data, error } = await supabase
     .from("card-mapping")
     .select(
-      "miroUserId, miroAppCardId, gitHubIssueId, gitHubUsername, created_at, miroBoardId, gitHubIssueNumber, auth ( miroUserId, access_token )",
+      "miroUserId, miroAppCardId, gitHubIssueId, gitHubUsername, created_at, miroBoardId, gitHubIssueNumber",
     )
     .eq("gitHubIssueId", gitHubIssueId);
 
@@ -61,7 +61,7 @@ exports.handler = async function (event) {
         const headers = {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: `Bearer ${item.auth.access_token}`,
+          Authorization: `Bearer ` + process.env.MIRO_ACCESS_TOKEN,
         };
 
         console.log('before the path request, console body')
