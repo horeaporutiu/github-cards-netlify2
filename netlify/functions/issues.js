@@ -64,7 +64,7 @@ exports.handler = async function (event) {
         const headers = {
           Accept: "application/json",
           "Content-Type": "application/json",
-          Authorization: `Bearer ` + process.env.MIRO_ACCESS_TOKEN,
+          Authorization: `Bearer ${item.auth.access_token}`,
         };
 
         console.log('before the path request, console body')
