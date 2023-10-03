@@ -68,8 +68,11 @@ exports.handler = async function (event) {
         };
 
         console.log('before the path request, console body')
+        console.log('gitHubIssue titlke')
+        console.log(gitHubIssue.title)
+        console.log(gitHubIssue.body)
         console.log(body)
-
+        
         //   Request options & body
         const options = {
           method: "PATCH",
