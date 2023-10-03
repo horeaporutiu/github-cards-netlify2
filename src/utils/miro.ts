@@ -28,6 +28,14 @@ export const insertAppCards = async (
     status: "connected",
   });
 
+  console.log(appCard.id)
+  console.log(issue.id)
+  console.log(appCard.createdBy)
+  console.log(issue.user.login)
+  console.log(id)
+  console.log(issue.number)
+  console.log(gitHubProjectCard.id)
+
   // Post data to supabase
   let resp1 = await supabase.from("card-mapping").insert([
     {
