@@ -29,7 +29,7 @@ export const insertAppCards = async (
   });
 
   // Post data to supabase
-  await supabase.from("card-mapping").insert([
+  let resp1 = await supabase.from("card-mapping").insert([
     {
       miroAppCardId: appCard.id,
       gitHubIssueId: issue.id,
@@ -40,7 +40,11 @@ export const insertAppCards = async (
       gitHubProjectCardId: gitHubProjectCard.id,
     },
   ]);
+
+  console.log('resp: ')
+  console.log(resp1)
 };
+
 
 export const removeSelectedItem = async (item: any) => {
   await miro.board.remove(item);
